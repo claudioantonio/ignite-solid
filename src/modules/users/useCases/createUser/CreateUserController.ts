@@ -6,6 +6,7 @@ class CreateUserController {
   constructor(private createUserUseCase: CreateUserUseCase) { }
 
   handle(request: Request, response: Response): Response {
+    console.log("CreateUserController was called");
     const { name, email } = request.body;
     try {
       const user = this.createUserUseCase.execute({ name, email });
